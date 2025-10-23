@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ToastProvider } from './contexts/ToastContext';
 import { AuthProvider } from './contexts/AuthContext';
@@ -25,7 +25,7 @@ function App() {
     <ThemeProvider>
       <ToastProvider>
         <AuthProvider>
-          <HashRouter>
+          <BrowserRouter>
             <Routes>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
@@ -44,7 +44,7 @@ function App() {
               
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
-          </HashRouter>
+          </BrowserRouter>
         </AuthProvider>
       </ToastProvider>
     </ThemeProvider>
