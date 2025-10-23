@@ -1,0 +1,5 @@
+{
+  "name": "Inventory Management System",
+  "description": "A comprehensive and professional-grade inventory management system built with React, TypeScript, and Tailwind CSS. It features modules for dashboard, products, suppliers, customers, sales, reports, and settings, with advanced functionalities like charting, bulk actions, and a light/dark theme.",
+  "requestFramePermissions": []
+}
