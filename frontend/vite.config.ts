@@ -5,9 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // 404 பிழையை சரிசெய்ய நீங்கள் சேர்த்த முக்கியமான வரி இதுதான்.
-      // The crucial line you added to fix the 404 error is this.
-      base: '/inventory-management-system/', // Important! 
+      // White screen problem-a sari panna, munnadi irundha line-a maathirukom.
+      // Idhu dhaan correct-aana setting.
+      base: './', // Important Fix!
+
       server: {
         port: 3000,
         host: '0.0.0.0',
