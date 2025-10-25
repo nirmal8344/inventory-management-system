@@ -24,12 +24,12 @@ services:
           name: inventory-db-final
           property: password
       - key: FRONTEND_URL
-        value: https://inventory-management-system-e4kz.vercel.app/
+        value: https://inventory-management-system-e4kz.vercel.app
 
   # ==================================
   # Pudhu PostgreSQL Database
   # ==================================
-  - type: psql
+  - type: pg # <-- INGA DHAAN SARI PANNIRUKEN (psql ku badila pg)
     name: inventory-db-final
     region: Singapore
     plan: free
