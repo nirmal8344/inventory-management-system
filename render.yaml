@@ -4,12 +4,13 @@
 services:
   - type: web
     name: inventory-backend-final
-    runtime: java
+    env: spring # Spring Boot ku idhu sariyana setting
     region: Singapore
     plan: free
     rootDir: backend
     buildCommand: ./mvnw clean install
     startCommand: java -jar target/*.jar
+    autoDeploy: true # Inime push panna, amaidhiya deploy aagidum
     envVars:
       - fromDatabase:
           name: inventory-db-final
@@ -24,10 +25,10 @@ services:
           property: password
         key: SPRING_DATASOURCE_PASSWORD
       - key: FRONTEND_URL
-        value: https://inventory-management-system-e4kz.vercel.app/
+        value: https://inventory-management-system-e4kz.vercel.app
 
 # ==================================
-# Database Services Section (Thaniya Irukanum)
+# Database Services Section
 # ==================================
 databases:
   - name: inventory-db-final
