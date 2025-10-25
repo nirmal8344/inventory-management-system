@@ -6,6 +6,7 @@ import AuthLayout from '../../components/auth/AuthLayout';
 import TextField from '../../components/auth/TextField';
 import PasswordField from '../../components/auth/PasswordField';
 import Button from '../../components/ui/Button';
+import apiClient from '../../api/axios'; // <-- PUDHUSA INDHA LINE AH ADD PANNIRUKEN
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -20,17 +21,23 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8080/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+      // ==========================================================
+      // INGA DHAAN MUKKIYAMANA MAATHAM
+      // Pazhaya "fetch" code ku badila, indha "apiClient" code ah use panrom
+      // ==========================================================
+      const response = await apiClient.post('/api/auth/login', {
+        email,
+        password,
       });
-
-      if (response.ok) {
-        login(); // This updates the context to say we are logged in
+      
+      // Axios la, response.ok ku badila, response.status വെച്ച് check pannanum
+      if (response.status === 200) {
+        login();
         addToast('Login successful!', 'success');
         navigate('/dashboard');
       } else {
+        // Axios amaidhiyave error ah throw pannidum, adhanala idhu thevai illa
+        // Aana oru safety ku irukatum
         addToast('Login failed. Please check your credentials.', 'error');
       }
     } catch (error) {

@@ -1,0 +1,35 @@
+services:
+  # ==================================
+  # Pudhu Java Backend Service
+  # ==================================
+  - type: web
+    name: inventory-backend-final
+    runtime: java
+    region: Singapore
+    plan: free
+    rootDir: backend
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: inventory-db-final
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: inventory-db-final
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: inventory-db-final
+          property: password
+      - key: FRONTEND_URL
+        value: https://inventory-management-system-e4kz.vercel.app/
+
+  # ==================================
+  # Pudhu PostgreSQL Database
+  # ==================================
+  - type: psql
+    name: inventory-db-final
+    region: Singapore
+    plan: free
