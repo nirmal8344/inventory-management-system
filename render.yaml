@@ -1,7 +1,7 @@
+# ==================================
+# Web Services Section
+# ==================================
 services:
-  # ==================================
-  # Pudhu Java Backend Service
-  # ==================================
   - type: web
     name: inventory-backend-final
     runtime: java
@@ -11,25 +11,25 @@ services:
     buildCommand: ./mvnw clean install
     startCommand: java -jar target/*.jar
     envVars:
-      - key: SPRING_DATASOURCE_URL
-        fromDatabase:
+      - fromDatabase:
           name: inventory-db-final
           property: connectionString
-      - key: SPRING_DATASOURCE_USERNAME
-        fromDatabase:
+        key: SPRING_DATASOURCE_URL
+      - fromDatabase:
           name: inventory-db-final
           property: user
-      - key: SPRING_DATASOURCE_PASSWORD
-        fromDatabase:
+        key: SPRING_DATASOURCE_USERNAME
+      - fromDatabase:
           name: inventory-db-final
           property: password
+        key: SPRING_DATASOURCE_PASSWORD
       - key: FRONTEND_URL
-        value: https://inventory-management-system-e4kz.vercel.app
+        value: https://inventory-management-system-e4kz.vercel.app/
 
-  # ==================================
-  # Pudhu PostgreSQL Database
-  # ==================================
-  - type: pg # <-- INGA DHAAN SARI PANNIRUKEN (psql ku badila pg)
-    name: inventory-db-final
+# ==================================
+# Database Services Section (Thaniya Irukanum)
+# ==================================
+databases:
+  - name: inventory-db-final
     region: Singapore
     plan: free
