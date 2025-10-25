@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Card from '../ui/Card';
-import type { RecentSale } from '../../types';
+import type { RecentSale } from '../../../types';
 import Button from '../ui/Button';
 
 interface RecentSalesTableProps {

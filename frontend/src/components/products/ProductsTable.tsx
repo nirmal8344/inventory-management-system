@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import type { Product } from '../../types';
+import type { Product } from '../../../types';
 import { EditIcon, TrashIcon, MoreVerticalIcon } from '../icons/IconPack';
 import ConfirmDeleteDialog from '../ui/ConfirmDeleteDialog';
 

@@ -7,7 +7,7 @@ import RecentSalesTable from '../../components/dashboard/RecentSalesTable';
 import LowStockAlertCard from '../../components/dashboard/LowStockAlertCard';
 // FIX: Removed non-existent UsersIcon from import.
 import { DollarSignIcon, PackageIcon, TrendingUpIcon, TrendingDownIcon, CustomersIcon } from '../../components/icons/IconPack';
-import type { StatsCardData } from '../../types';
+import type { StatsCardData } from '../../../types';
 import { salesDataForChart, stockByCategoryData, mockRecentSales, mockProducts } from '../../data/mockData';
 
 const DashboardPage = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import { PlusIcon, EditIcon, TrashIcon } from '../../components/icons/IconPack';
-import type { Sale } from '../../types';
+import type { Sale } from '../../../types';
 import { useToast } from '../../hooks/useToast';
 // நம்மால் இன்னும் உருவாக்கப்படாததால், இந்த வரியை இப்போதைக்கு கமென்ட் செய்யவும் அல்லது SaleFormModal-ஐ உருவாக்கவும்
 // import SaleFormModal from '../../components/sales/SaleFormModal'; 

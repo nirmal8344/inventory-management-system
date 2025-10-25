@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../ui/Card';
 import { TrendingUpIcon, TrendingDownIcon } from '../icons/IconPack';
-import type { StatsCardData } from '../../types';
+import type { StatsCardData } from '../../../types';
 
 
 const StatsCard: React.FC<StatsCardData> = ({ title, value, change, changeType, icon: Icon }) => {

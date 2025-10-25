@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
-import type { Product } from '../../types';
+import type { Product } from '../../../types';
 
 interface LowStockAlertCardProps {
     products: Product[];

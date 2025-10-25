@@ -1,27 +1,21 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      // White screen problem-a sari panna, munnadi irundha line-a maathirukom.
-      // Idhu dhaan correct-aana setting.
-      base: './', // Important Fix!
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  
+  // Local server settings (Vercel la idhu affect aagadhu)
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+  },
 
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
+  // Alias settings (optional, aana sariyana syntax la iruku)
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });

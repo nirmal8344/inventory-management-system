@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../ui/Modal';
 import Button from '../ui/Button';
-import type { Product } from '../../types';
+import type { Product } from '../../../types';
 
 interface ProductFormModalProps {
   isOpen: boolean;

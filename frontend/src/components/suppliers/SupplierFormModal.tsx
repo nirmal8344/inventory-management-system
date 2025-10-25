@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../ui/Modal';
 import Button from '../ui/Button';
-import type { Supplier } from '../../types';
+import type { Supplier } from '../../../types';
 
 interface SupplierFormModalProps {
   isOpen: boolean;

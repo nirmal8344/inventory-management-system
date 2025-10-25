@@ -3,7 +3,7 @@ import ProductsTable from '../../components/products/ProductsTable';
 import Button from '../../components/ui/Button';
 import ProductFormModal from '../../components/products/ProductFormModal';
 import { PlusIcon, UploadIcon, DownloadIcon, FilterIcon, SearchIcon } from '../../components/icons/IconPack';
-import type { Product } from '../../types';
+import type { Product } from '../../../types';
 import { useToast } from '../../hooks/useToast';
 
 const ProductsPage = () => {

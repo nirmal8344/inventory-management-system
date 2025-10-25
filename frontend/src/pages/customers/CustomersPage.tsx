@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import { PlusIcon } from '../../components/icons/IconPack';
-import type { Customer } from '../../types';
+import type { Customer } from '../../../types';
 import { useToast } from '../../hooks/useToast';
 
 const LoyaltyBadge: React.FC<{ status: 'Bronze' | 'Silver' | 'Gold' }> = ({ status }) => {

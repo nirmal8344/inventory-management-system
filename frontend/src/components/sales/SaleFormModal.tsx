@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../ui/Modal';
 import Button from '../ui/Button';
-import type { Sale } from '../../types';
+import type { Sale } from '../../../types';
 
 interface SaleFormModalProps {
   isOpen: boolean;

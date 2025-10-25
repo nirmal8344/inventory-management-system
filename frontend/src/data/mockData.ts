@@ -1,5 +1,5 @@
 
-import type { Product, Supplier, Customer, Sale, RecentSale } from '../types';
+import type { Product, Supplier, Customer, Sale, RecentSale } from '../../types';
 
 export const mockProducts: Product[] = [
   { id: 'PROD001', name: 'Wireless Mouse', sku: 'WM-101', category: 'Electronics', supplier: 'TechGear Inc.', costPrice: 15.50, salePrice: 29.99, quantity: 120, status: 'In Stock', lastUpdated: '2023-10-26' },

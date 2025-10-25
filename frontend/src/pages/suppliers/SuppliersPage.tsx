@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import { PlusIcon, EditIcon, TrashIcon } from '../../components/icons/IconPack';
-import type { Supplier } from '../../types';
+import type { Supplier } from '../../../types';
 import { useToast } from '../../hooks/useToast';
 import SupplierFormModal from '../../components/suppliers/SupplierFormModal';
 
