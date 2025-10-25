@@ -11,7 +11,8 @@
     ],
     "skipLibCheck": true,
     "types": [
-      "node"
+      "node",
+      "vite/client" // Intha line ah add panniruken
     ],
     "moduleResolution": "bundler",
     "isolatedModules": true,
