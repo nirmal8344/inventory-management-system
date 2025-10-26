@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { DashboardIcon, ProductsIcon, SuppliersIcon, CustomersIcon, SalesIcon, ReportsIcon, SettingsIcon, LogoutIcon, ChevronLeftIcon, ChevronRightIcon, LogoIcon } from '../icons/IconPack';
 
 const navItems = [
-  { to: '/dashboard', icon: DashboardIcon, label: 'Dashboard' },
+  { to: '/', icon: DashboardIcon, label: 'Dashboard' },
   { to: '/products', icon: ProductsIcon, label: 'Products' },
   { to: '/suppliers', icon: SuppliersIcon, label: 'Suppliers' },
   { to: '/customers', icon: CustomersIcon, label: 'Customers' },
@@ -21,7 +20,7 @@ const Sidebar = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (isOpen: b
       <div className={`bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 flex flex-col transition-all duration-300 ease-in-out ${isOpen ? 'w-64' : 'w-20'}`}>
         <div className={`flex items-center ${isOpen ? 'justify-between' : 'justify-center'} p-4 border-b border-slate-200 dark:border-slate-700 h-16`}>
           {isOpen && <div className="flex items-center gap-2">
-            <LogoIcon className="h-8 w-8 text-primary-500"/>
+            <LogoIcon className="h-8 w-8 text-blue-600"/> {/* Inga yum color ah maathirukom */}
             <span className="text-xl font-bold">InvSys</span>
           </div>}
           <button onClick={() => setIsOpen(!isOpen)} className="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700">
@@ -33,10 +32,11 @@ const Sidebar = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (isOpen: b
             <NavLink
               key={item.to}
               to={item.to}
+              end
               className={({ isActive }) =>
                 `flex items-center p-2 rounded-lg transition-colors duration-200 ${isOpen ? 'justify-start' : 'justify-center'} ${
                   isActive
-                    ? 'bg-primary-500 text-white'
+                    ? 'bg-blue-600 text-white' // <-- MUKKIYAMAANA MAATRAM INGADHAAN
                     : 'hover:bg-slate-100 dark:hover:bg-slate-700'
                 }`
               }
@@ -48,10 +48,13 @@ const Sidebar = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (isOpen: b
           ))}
         </nav>
         <div className="px-4 py-4 border-t border-slate-200 dark:border-slate-700">
-          <NavLink to="/settings" className={({ isActive }) =>
+          <NavLink
+            to="/settings"
+            end
+            className={({ isActive }) =>
             `flex items-center p-2 rounded-lg transition-colors duration-200 ${isOpen ? 'justify-start' : 'justify-center'} ${
               isActive
-                ? 'bg-primary-500 text-white'
+                ? 'bg-blue-600 text-white' // <-- INGA YUM MAATHIRUKOM
                 : 'hover:bg-slate-100 dark:hover:bg-slate-700'
             }`
           }>
