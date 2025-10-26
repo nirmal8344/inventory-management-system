@@ -1,8 +1,14 @@
 import axios from 'axios';
 
+// 1. Backend oda base URL ah inga eduthukurom
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+// 2. Axios instance ah create panrom
 const apiClient = axios.create({
-  // Vercel/Netlify la namma set panra variable ah inga eduthukum
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json', // Idhu romba mukkiyam!
+  },
 });
 
 export default apiClient;
