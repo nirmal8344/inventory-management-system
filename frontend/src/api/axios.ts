@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://inventory-backend-ctv7.onrender.com';
+// Marubadiyum Vercel kitta irundhu URL ah eduka solrom
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
