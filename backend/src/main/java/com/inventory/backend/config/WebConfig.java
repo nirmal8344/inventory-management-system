@@ -1,4 +1,6 @@
-package com.inventory.backend.config; 
+// WebConfig.java
+
+package com.inventory.backend.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -9,9 +11,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // Ella API paths kum allow pannu
-                .allowedOrigins("*") // Endha frontend URL la irundhum allow pannu
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Indha methods ah laam allow pannu
-                .allowedHeaders("*");
+        registry.addMapping("/api/**") // Unga API routes "/api/" la start aana, idha apdiye vidunga
+            .allowedOrigins("https://inventory-management-system-kf7y.vercel.app") // Unga Vercel Frontend URL
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS") // Allow panra methods
+            .allowedHeaders("*")
+            .allowCredentials(true);
     }
 }
