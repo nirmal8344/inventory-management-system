@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-// 1. Backend oda base URL ah inga eduthukurom
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// 1. Backend oda live Render URL ah inga direct ah kudukkurom.
+// Pazhaya 'import.meta.env.VITE_API_BASE_URL' line ah remove pannitom.
+const API_BASE_URL = 'https://inventory-backend-ctv7.onrender.com';
 
 // 2. Axios instance ah create panrom
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    'Content-Type': 'application/json', // Idhu romba mukkiyam!
+    'Content-Type': 'application/json',
   },
 });
 
